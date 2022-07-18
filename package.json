@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "inquirer": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  },
+  "name": "julian-franklin-team-profile-generator",
+  "description": "An application for generating team profiles.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfranklin12/Julian-Franklin-Team-Profile-Generator.git"
+  },
+  "author": "Julian Franklin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfranklin12/Julian-Franklin-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/jfranklin12/Julian-Franklin-Team-Profile-Generator#readme"
+}
