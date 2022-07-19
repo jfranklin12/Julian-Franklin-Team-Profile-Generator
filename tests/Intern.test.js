@@ -1,25 +1,27 @@
-const Employee = require("../lib/Employee")
+const Intern = require("../lib/Intern")
 
-describe('Employee', () => {
-    describe('Employee Properties', () => {
-        it('should return an object with name, id, and email', () => {
-            const obj = new Employee('Paul', 104, 'paul@aol.com');
+describe('Intern', () => {
+    describe('Intern Properties', () => {
+        it('should return an object with name, id, email, and school', () => {
+            const obj = new Intern('Cindy', 372, 'cindy@hotmail.com', 'Georgia Tech');
 
-            expect(obj.name).toEqual('Paul');
-            expect(obj.id).toEqual(104);
-            expect(obj.email).toEqual('paul@aol.com');
+            expect(obj.name).toEqual('Cindy');
+            expect(obj.id).toEqual(372);
+            expect(obj.email).toEqual('cindy@hotmail.com');
+            expect(obj.school).toEqual('Georgia Tech');
         });
 
     });
 
-    describe('Employee Get Information', () => {
-        it('should return an object with name, id, email and role', () => {
-            const emp = new Employee('Sam', 23, 'sam@aol.com', 'Employee');
+    describe('Intern Get Information', () => {
+        it('should return an object with name, id, email, school and role', () => {
+            const int = new Intern('Jason', 842, 'jason@aol.com', 'Georgia State', 'Intern');
 
-            expect(emp.getName()).toEqual('Sam');
-            expect(emp.getId()).toEqual(23);
-            expect(emp.getEmail()).toEqual('sam@aol.com');
-            expect(emp.getRole()).toEqual('Employee');
+            expect(int.getName()).toEqual('Jason');
+            expect(int.getId()).toEqual(842);
+            expect(int.getEmail()).toEqual('jason@aol.com');
+            expect(int.getSchool()).toEqual('Georgia State');
+            expect(int.getRole()).toEqual('Intern');
         })
     })
 });
