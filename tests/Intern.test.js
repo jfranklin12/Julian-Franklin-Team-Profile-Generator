@@ -1,20 +1,25 @@
-const Manager = require("../lib/Intern")
+const Employee = require("../lib/Employee")
 
-describe('Manager', () => {
-    describe('Manager Properties', () => {
+describe('Employee', () => {
+    describe('Employee Properties', () => {
         it('should return an object with name, id, and email', () => {
-            const obj = new Manager('Paul', 104, 'paul@aol.com');
+            const obj = new Employee('Paul', 104, 'paul@aol.com');
 
             expect(obj.name).toEqual('Paul');
             expect(obj.id).toEqual(104);
-            expect(obj.email).toEqual('paul@aol.com')
+            expect(obj.email).toEqual('paul@aol.com');
         });
+
     });
 
-    it("should thorw an error if a an empty string or 0 is the user input", () => {
-        const cb = () => new Manager(" ", 0, " ");
-        const err = new Error("Expected parameters of name and email should not be empty");
+    describe('Employee Get Information', () => {
+        it('should return an object with name, id, email and role', () => {
+            const emp = new Employee('Sam', 23, 'sam@aol.com', 'Employee');
 
-        expect(cb).toThrowError(err);
-    });
+            expect(emp.getName()).toEqual('Sam');
+            expect(emp.getId()).toEqual(23);
+            expect(emp.getEmail()).toEqual('sam@aol.com');
+            expect(emp.getRole()).toEqual('Employee');
+        })
+    })
 });

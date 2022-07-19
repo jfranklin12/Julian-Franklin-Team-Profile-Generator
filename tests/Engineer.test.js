@@ -1,20 +1,27 @@
-const Manager = require("../lib/Engineer")
+const Engineer = require("../lib/Engineer")
 
-describe('Manager', () => {
-    describe('Manager Properties', () => {
-        it('should return an object with name, id, and email', () => {
-            const obj = new Manager('Paul', 104, 'paul@aol.com');
+describe('Engineer', () => {
+    describe('Engineer Properties', () => {
+        it('should return an object with name, id, email, and github', () => {
+            const obj = new Engineer('Sandy', 99, 'sandy@yahoo.com', 'sandy234');
 
-            expect(obj.name).toEqual('Paul');
-            expect(obj.id).toEqual(104);
-            expect(obj.email).toEqual('paul@aol.com')
+            expect(obj.name).toEqual('Sandy');
+            expect(obj.id).toEqual(99);
+            expect(obj.email).toEqual('sandy@yahoo.com');
+            expect(obj.github).toEqual('sandy234');
         });
+
     });
 
-    it("should thorw an error if a an empty string or 0 is the user input", () => {
-        const cb = () => new Manager(" ", 0, " ");
-        const err = new Error("Expected parameters of name and email should not be empty");
+    describe('Engineer Get Information', () => {
+        it('should return an object with name, id, email, github and role', () => {
+            const eng = new Engineer('Chris', 421, 'chris@gmail.com', 'chris568', 'Engineer');
 
-        expect(cb).toThrowError(err);
+            expect(eng.getName()).toEqual('Chris');
+            expect(eng.getId()).toEqual(421);
+            expect(eng.getEmail()).toEqual('chris@gmail.com');
+            expect(eng.getGithub()).toEqual('chris568');
+            expect(eng.getRole()).toEqual('Engineer');
+        });
     });
 });
