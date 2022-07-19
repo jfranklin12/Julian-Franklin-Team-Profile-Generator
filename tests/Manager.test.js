@@ -2,19 +2,26 @@ const Manager = require("../lib/Manager")
 
 describe('Manager', () => {
     describe('Manager Properties', () => {
-        it('should return an object with name, id, and email', () => {
-            const obj = new Manager('Paul', 104, 'paul@aol.com');
+        it('should return an object with name, id, email, and office number', () => {
+            const obj = new Manager('Nick', 85, 'nick@aol.com', 1);
 
-            expect(obj.name).toEqual('Paul');
-            expect(obj.id).toEqual(104);
-            expect(obj.email).toEqual('paul@aol.com')
+            expect(obj.name).toEqual('Nick');
+            expect(obj.id).toEqual(85);
+            expect(obj.email).toEqual('nick@aol.com');
+            expect(obj.officeNumber).toEqual(1)
         });
+
     });
 
-    it("should thorw an error if a an empty string or 0 is the user input", () => {
-        const cb = () => new Manager(" ", 0, " ");
-        const err = new Error("Expected parameters of name and email should not be empty");
+    describe('Manager Get Information', () => {
+        it('should return an object with name, id, email, office number, and role', () => {
+            const man = new Manager('Jim', 45, 'jim@aol.com', 2, 'Manager');
 
-        expect(cb).toThrowError(err);
-    });
+            expect(man.getName()).toEqual('Jim');
+            expect(man.getId()).toEqual(45);
+            expect(man.getEmail()).toEqual('jim@aol.com');
+            expect(man.getOfficeNumber()).toEqual(2);
+            expect(man.getRole()).toEqual('Manager');
+        })
+    })
 });
