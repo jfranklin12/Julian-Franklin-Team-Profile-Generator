@@ -181,5 +181,50 @@ function manCard(manager) {
     </div>`
 };
 
+function empCards(employee) {
+    switch (employee.getRole()) {
+        case 'Engineer':
+            return `
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="card-title">${employee.engName}</h4>
+                        <h5 class="card-title">💻Engineer</h5>
+                    </div>
+                    <div class="card-body text-primary">
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">ID: ${employee.engId}</li>
+                                <li class="list-group-item">Email: ${employee.engEmail}</li>
+                                <li class="list-group-item">Github: ${employee.engGithub}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            break;
+
+        case 'Intern':
+            return `
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="card-title">${employee.intName}}</h4>
+                        <h5 class="card-title">🎓 Intern</h5>
+                    </div>
+                <div class="card-body text-primary">
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID: ${employee.intId}}</li>
+                            <li class="list-group-item">Email: ${employee.intEmail}</li>
+                            <li class="list-group-item">School: ${employee.intSchool}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>`
+            break;
+    }
+}
+
 addManager();
 
