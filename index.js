@@ -3,9 +3,9 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-
+// array to store employee objects created through prompts
 let team = [];
-
+// inquirer prompts for manager
 const manager = [
     {
         type: 'input',
@@ -38,7 +38,7 @@ const manager = [
         choices: [`Engineer`, `Intern`, `I don't want to want to add any more team members`],
     },
 ]
-
+// inquirer prompts for engineer
 const engineer = [
     {
         type: 'input',
@@ -62,7 +62,7 @@ const engineer = [
         type: 'input',
         name: 'engGithub',
         message: `What is your engineer's github?`,
-        default: `jfranks`
+        default: `jfranklin12`
     },
     {
         type: 'list',
@@ -71,7 +71,7 @@ const engineer = [
         choices: [`Engineer`, `Intern`, `I don't want to want to add any more team members`],
     },
 ]
-
+// inquirer prompts for intern
 const intern = [
     {
         type: 'input',
@@ -104,7 +104,7 @@ const intern = [
         choices: [`Engineer`, `Intern`, `I don't want to want to add any more team members`],
     },
 ]
-
+// function to store manager information, push it to the team and prompt next employee or finish building team and build team
 function addManager() {
     inquirer
         .prompt(manager).then(manRes => {
@@ -124,8 +124,7 @@ function addManager() {
             };
         });
 };
-
-
+// function to store engineer information, push it to the team and prompt next employee or finish building team and build team
 function addEngineer() {
     inquirer
         .prompt(engineer).then(engRes => {
@@ -144,7 +143,7 @@ function addEngineer() {
             };
         });
 };
-
+// function to store intern information, push it to the team and prompt next employee or finish building team and build team
 function addIntern() {
     inquirer
         .prompt(intern).then(intRes => {
@@ -163,7 +162,7 @@ function addIntern() {
             };
         });
 }
-
+// function to create card to display to HTML for manager
 function manCard(manager) {
     return `            
     <div class="col mb-4">
@@ -176,7 +175,7 @@ function manCard(manager) {
                 <div class="card">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${manager.id}</li>
-                        <li class="list-group-item">Email:<a mailto='${manager.email}'>${manager.email}</a></li>
+                        <li class="list-group-item">Email:<a href = mailto:'${manager.email}'>${manager.email}</a></li>
                         <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
                     </ul>
                 </div>
@@ -184,7 +183,7 @@ function manCard(manager) {
         </div>
     </div>`
 };
-
+// function to create card to display to HTML for other employees
 function empCards(employee) {
     switch (employee.getRole()) {
         case 'Engineer':
@@ -199,7 +198,7 @@ function empCards(employee) {
                         <div class="card">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">ID: ${employee.id}</li>
-                                <li class="list-group-item">Email: <a mailto='${employee.email}'>${employee.email}</a></li>
+                                <li class="list-group-item">Email: <a href= mailto:'${employee.email}'>${employee.email}</a></li>
                                 <li class="list-group-item">Github: <a href='https://github.com/${employee.github}'>${employee.github}</a></li>
                             </ul>
                         </div>
@@ -219,7 +218,7 @@ function empCards(employee) {
                     <div class="card">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">ID: ${employee.id}</li>
-                            <li class="list-group-item">Email: <a mailto='${employee.email}'>${employee.email}</a></li>
+                            <li class="list-group-item">Email: <a href= mailto:'${employee.email}'>${employee.email}</a></li>
                             <li class="list-group-item">School: ${employee.school}</li>
                         </ul>
                     </div>
@@ -227,8 +226,9 @@ function empCards(employee) {
             </div>`;
     }
 }
-
+// function to build the HTML page and write it
 function buildTeam() {
+    // Beginning of HTML
     const bHtml = `
     <!DOCTYPE html>
         <html lang="en">
@@ -259,13 +259,15 @@ function buildTeam() {
     
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3">`
+    // pull manger card inside HTML
     let managerCard = manCard(team[0]);
+    // pull other employee cards inside HTML
     let employeeCards = '';
     for(let i = 1; i < team.length; i++) {
         let card = empCards(team[i]);
         employeeCards += card;
     }
-
+// ending of HTML
     const eHtml = `
         </div>
             </div>
@@ -273,9 +275,9 @@ function buildTeam() {
     </body>
 
     </html>`
-    
+// combine parts of the HTML  
 const finalHtml = bHtml + managerCard + employeeCards + eHtml;
-
+// Create file location of HTML
 fs.writeFile('./dist/index.html', finalHtml, (err) => {
     if(err){
         console.log("Oh no! Something went wrong!")

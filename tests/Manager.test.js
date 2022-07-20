@@ -1,5 +1,5 @@
 const Manager = require("../lib/Manager")
-
+// test employee properties
 describe('Manager', () => {
     describe('Manager Properties', () => {
         it('should return an object with name, id, email, and office number', () => {
@@ -12,7 +12,7 @@ describe('Manager', () => {
         });
 
     });
-
+// test employee getters
     describe('Manager Get Information', () => {
         it('should return an object with name, id, email, office number, and role', () => {
             const man = new Manager('Jim', 45, 'jim@aol.com', 2, 'Manager');

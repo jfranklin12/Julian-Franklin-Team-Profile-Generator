@@ -1,5 +1,5 @@
 const Employee = require("../lib/Employee")
-
+// test employee properties
 describe('Employee', () => {
     describe('Employee Properties', () => {
         it('should return an object with name, id, and email', () => {
@@ -11,7 +11,7 @@ describe('Employee', () => {
         });
 
     });
-
+// test employee getters
     describe('Employee Get Information', () => {
         it('should return an object with name, id, email and role', () => {
             const emp = new Employee('Sam', 23, 'sam@aol.com', 'Employee');

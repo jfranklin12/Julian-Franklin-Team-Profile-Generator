@@ -2,31 +2,31 @@
     background-color: #03045e;
     color: #CAF0F8;
 }
-
-.title, h4, h5 {
+/* Font style to Jumbotron */
+.title {
     font-family: 'Oswald', sans-serif;
-}
-
-h4, h5 {
-    font-family: 'Oswald', sans-serif;
-    color: #03045E;
 }
 
 .lead {
     font-family: 'Quattrocento', serif;
     font-size: 2rem;
 }
-
+/* Card header font style */
+h4, h5 {
+    font-family: 'Oswald', sans-serif;
+    color: #03045E;
+}
+/* Card list items font style */
 li{
     font-family: 'Quattrocento', serif;
     font-size: larger;
     color: #03045E;
 }
-
+/* background color of card header */
 .card-header {
     background-color: #90E0EF;
 }
-
+/* makes cards float to the center */
 .row {
     justify-content: center;
 }

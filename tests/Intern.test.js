@@ -1,5 +1,5 @@
 const Intern = require("../lib/Intern")
-
+// test employee properties
 describe('Intern', () => {
     describe('Intern Properties', () => {
         it('should return an object with name, id, email, and school', () => {
@@ -12,7 +12,7 @@ describe('Intern', () => {
         });
 
     });
-
+// test employee getters
     describe('Intern Get Information', () => {
         it('should return an object with name, id, email, school and role', () => {
             const int = new Intern('Jason', 842, 'jason@aol.com', 'Georgia State', 'Intern');
