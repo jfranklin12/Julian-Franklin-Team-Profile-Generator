@@ -107,9 +107,11 @@ const intern = [
 
 function addManager() {
     inquirer
-    .prompt(manager).then(manRes => {
+        .prompt(manager).then(manRes => {
             const manager = new Manager(manRes.manName, manRes.manId, manRes.manEmail, manRes.manOffNum);
             console.log(manager);
+            team.push(manager);
+            console.log(team);
 
             if (manRes.memberType === `Engineer`) {
                 addEngineer();
@@ -127,6 +129,8 @@ function addEngineer() {
         .prompt(engineer).then(engRes => {
             const engineer = new Engineer(engRes.engName, engRes.engId, engRes.engEmail, engRes.engGithub);
             console.log(engineer);
+            team.push(engineer);
+            console.log(team);
 
             if (engRes.memberType === `Engineer`) {
                 addEngineer();
@@ -143,6 +147,8 @@ function addIntern() {
         .prompt(intern).then(intRes => {
             const intern = new Intern(intRes.intName, intRes.intId, intRes.intEmail, intRes.intSchool);
             console.log(intern);
+            team.push(intern);
+            console.log(team);
 
             if (intRes.memberType === `Engineer`) {
                 addEngineer();
@@ -154,4 +160,26 @@ function addIntern() {
         });
 }
 
+function manCard(manager) {
+    return `            
+    <div class="col mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="card-title">${manager.manName}</h4>
+                <h5 class="card-title">🍵 Manager</h5>
+            </div>
+            <div class="card-body text-primary">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID: ${manager.manId}</li>
+                        <li class="list-group-item">Email:${manager.manEmail}</li>
+                        <li class="list-group-item">Office Number: ${manager.manOffNum}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>`
+};
+
 addManager();
+

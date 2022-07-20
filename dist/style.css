@@ -26,3 +26,7 @@ li{
 .card-header {
     background-color: #90E0EF;
 }
+
+.row {
+    justify-content: center;
+}
