@@ -5,9 +5,15 @@
   
   Use this application to insert information in the command line of your terminal regarding your employee team, and see it generated in an HTML!
 
+  ![Homepage](./assests/homepage.jpg)
+
+  ![Terminal with inquirer questions](./assests/terminal-with-inquirer.jpg)
+
+  ![Conosle Log of Team](./assests/console-log-of-team.jpg)
+
   Use the link below to access a video of how to use the application.
 
-  <!-- Link to video -->
+  [Video of HTML Team Profile Generator](https://drive.google.com/file/d/1qH84G3UVlhsRqG_EC-cIV7gSHI87lK4B/view)
 
   ## Table of Content
   - [Installation](#installation)
