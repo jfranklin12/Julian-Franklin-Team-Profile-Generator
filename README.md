@@ -13,7 +13,7 @@
 
   Use the link below to access a video of how to use the application.
 
-  [Video of HTML Team Profile Generator](https://drive.google.com/file/d/1qH84G3UVlhsRqG_EC-cIV7gSHI87lK4B/view)
+  [Video of HTML Team Profile Generator](https://drive.google.com/file/d/1qH84G3UVlhsRqG_EC-cIV7gSHI87lK4B/view?usp=sharing)
 
   ## Table of Content
   - [Installation](#installation)
